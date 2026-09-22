@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    CPU/GPU thermal/performance ladder.
+
+    CPU topology:
+      policy0 : CPU[0-3] (Little)
+      policy4 : CPU[4-7] (Big)
+-->
+<perf-config>
+    <atmc>
+
+        <!-- CPU Thermal & Frequency Levels -->
+        <cpu_levels>
+            <level id="1"  little="0,1958" big="0,2400"/>
+            <level id="2"  little="0,1805" big="0,2304"/>
+            <level id="3"  little="0,1651" big="0,2208"/>
+            <level id="4"  little="0,1497" big="0,2112"/>
+            <level id="5"  little="0,1324" big="0,2054"/>
+            <level id="6"  little="0,1113" big="0,1900"/>
+            <level id="7"  little="0,940"  big="0,1651"/>
+            <level id="8"  little="0,806"  big="0,1497"/>
+            <level id="9"  little="0,691"  big="0,1344"/>
+            <level id="10" little="0,691"  big="0,1190"/>
+            <level id="11" little="0,691"  big="0,960"/>
+            <level id="12" little="0,691"  big="0,691"/>
+        </cpu_levels>
+
+        <!-- Adreno GPU Frequency Ladder -->
+        <gpu_levels>
+            <level id="1" min="940" max="940"/>
+            <level id="2" min="875" max="875"/>
+            <level id="3" min="816" max="816"/>
+            <level id="4" min="734" max="734"/>
+            <level id="5" min="650" max="650"/>
+            <level id="6" min="600" max="600"/>
+            <level id="7" min="500" max="500"/>
+            <level id="8" min="345" max="345"/>
+            <level id="9" min="295" max="295"/>
+        </gpu_levels>
+
+    </atmc>
+</perf-config>
