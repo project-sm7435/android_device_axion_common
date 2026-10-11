@@ -3,7 +3,7 @@
   SPDX-FileCopyrightText: AxionOS
   SPDX-License-Identifier: Apache-2.0
 
-  Performance/Thermal configuration - Snapdragon 7s Gen 2 (SM7435)
+  Performance configuration - Snapdragon 7s Gen 2 (SM7435)
   Target Device: garnet
 
   CPU topology:
@@ -48,61 +48,5 @@
             <level id="8" min="345" max="345"/>
             <level id="9" min="295" max="295"/>
         </gpu_levels>
-
-        <!-- Base Profiles / Scenes -->
-        <scenes>
-            <scene name="default_scene">
-                <level id="5">
-                    <action unit="cpu" status="3"/>
-                </level>
-                <level id="8">
-                    <action unit="cpu" status="4"/>
-                </level>
-                <level id="9">
-                    <action unit="cpu" status="5"/>
-                    <action unit="dexopt" status="1"/>
-                </level>
-                <level id="10">
-                    <action unit="cpu" status="6"/>
-                    <action unit="bg_killer" status="3"/>
-                </level>
-                <level id="11">
-                    <action unit="cpu" status="7"/>
-                    <action unit="bg_killer" status="4"/>
-                </level>
-                <level id="12">
-                    <action unit="cpu" status="7"/>
-                </level>
-                <level id="13">
-                    <action unit="cpu" status="8"/>
-                </level>
-            </scene>
-        </scenes>
-
-        <!-- App Specific Thermal Profiles -->
-        <apps>
-            <!-- Navigation apps: Tuned to prevent dashboard overheating under direct sun -->
-            <app pkgs="com.google.android.apps.maps,com.autonavi.minimap,com.baidu.BaiduMap,org.microg.tools.selfupdate">
-                <level id="7">
-                    <action unit="cpu" status="6"/>
-                </level>
-                <level id="10">
-                    <action unit="cpu" status="9"/>
-                </level>
-            </app>
-
-            <!-- Heavy Games (Genshin, PUBG, etc.): Tuned for sustained thermal stability over burst spikes -->
-            <app pkgs="com.tencent.tmgp.pubgmhd,com.epicgames.fortnite,com.miHoYo.GenshinImpact,com.miHoYo.hkrpg,com.mojang.minecraftpe,com.HoYoverse.hkrpgoversea,com.miHoYo.Yuanshen,com.pubg.imobile,com.activision.callofduty.shooter,com.dts.freefireth,com.dts.freefiremax">
-                <level id="5">
-                    <action unit="cpu" status="4"/>
-                </level>
-                <level id="9">
-                    <action unit="cpu" status="6"/>
-                </level>
-                <level id="11">
-                    <action unit="cpu" status="8"/>
-                </level>
-            </app>
-        </apps>
     </atmc>
 </perf-config>
